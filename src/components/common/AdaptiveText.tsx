@@ -1,5 +1,5 @@
 import { ReactNode, CSSProperties } from 'react';
-import { useAdaptiveTextSize } from '../hooks/useAdaptiveTextSize';
+import { useAdaptiveTextSize } from '../../hooks/useAdaptiveTextSize';
 
 interface AdaptiveTextProps {
   children: ReactNode;

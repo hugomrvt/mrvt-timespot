@@ -1,9 +1,9 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
-import { LocalTimeApiService, TimeZoneData, CitySearchResult } from '../services/localTimeApi';
+import { LocalTimeApiService, TimeZoneData, CitySearchResult } from '../lib/api/localTimeApi';
 import { ExtendedTimeZone } from '../types';
-import { getRealTimeForTimezone } from '../utils/timezoneUtils';
+import { getRealTimeForTimezone } from '../lib/utils/timezoneUtils';
 import { DEFAULT_TIMEZONES, TIMEZONE_TO_COUNTRY_MAP } from '../constants/timezones';
-import { logger } from '../services/secureLogger';
+import { logger } from '../lib/utils/secureLogger';
 
 export function useTimeZoneData(
   serverConnected: boolean,

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Search, Menu, X, User, Download } from 'lucide-react';
-import { TimeSpotIcon } from './TimeSpotIcon';
+import { TimeSpotIcon } from '../common/TimeSpotIcon';
 
 interface MobileNavigationProps {
   onSearchClick: () => void;

@@ -4,7 +4,7 @@ import * as React from "react";
 import * as RechartsPrimitive from "recharts";
 
 import { cn } from "./utils";
-import { logger } from "../../services/secureLogger";
+import { logger } from "../../lib/utils/secureLogger";
 
 /**
  * Sanitise les valeurs CSS pour éviter les injections

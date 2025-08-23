@@ -84,22 +84,53 @@
 
 ```
 src/
-├── components/          # React components
-│   ├── ResponsivePrimaryTimeDisplay.tsx
-│   ├── PrimaryTimeDisplay.tsx
-│   ├── ResponsiveTimeZoneGrid.tsx
-│   ├── TimeZoneCard.tsx
-│   └── Credits.tsx
+├── components/          # React components organized by feature
+│   ├── layout/         # Layout components
+│   │   ├── Header.tsx
+│   │   ├── AppHeader.tsx
+│   │   ├── ResponsiveAppHeader.tsx
+│   │   └── MobileNavigation.tsx
+│   ├── time/           # Time-related components
+│   │   ├── PrimaryTimeDisplay.tsx
+│   │   ├── ResponsivePrimaryTimeDisplay.tsx
+│   │   ├── TimeZoneCard.tsx
+│   │   ├── ResponsiveTimeZoneGrid.tsx
+│   │   └── TimeFormatToggle.tsx
+│   ├── city/           # City information components
+│   │   ├── CityInfoSection.tsx
+│   │   └── ResponsiveCityInfoSection.tsx
+│   ├── common/         # Shared/common components
+│   │   ├── AdaptiveText.tsx
+│   │   ├── ApiDataMonitor.tsx
+│   │   ├── Credits.tsx
+│   │   ├── StatusNotification.tsx
+│   │   └── TimeSpotIcon.tsx
+│   └── ui/             # UI library components (shadcn/ui)
 ├── hooks/              # Custom React hooks
 │   ├── useTimeZoneData.ts
 │   ├── useSunData.ts
 │   ├── useAdaptiveTextSize.ts
-│   └── useBreakpoint.ts
-├── services/           # Local API service (no backend)
-│   └── localTimeApi.ts
+│   ├── useBreakpoint.ts
+│   ├── useRealTimeUpdates.ts
+│   ├── useServerConnection.ts
+│   ├── useTouchDevice.ts
+│   └── useUserPreferences.ts
+├── lib/                # Library code
+│   ├── api/            # API services
+│   │   ├── localTimeApi.ts
+│   │   └── supabaseTimeApi.ts
+│   └── utils/          # Utility functions
+│       ├── timezoneUtils.ts
+│       ├── secureLogger.ts
+│       └── validation.ts
+├── pages/              # Page components
+│   └── Frame6.tsx
 ├── types/              # TypeScript type definitions
-├── utils/              # Utility functions
-│   └── timezoneUtils.ts
+│   └── index.ts
+├── constants/          # Application constants
+│   └── timezones.ts
+├── styles/             # Global styles
+│   └── globals.css
 ├── App.tsx             # Main application component
 └── main.tsx            # Application entry point
 ```
@@ -118,9 +149,6 @@ TimeSpot follows a modular, hook-based architecture with a local data service:
 - **useSunData**: Provides sunrise/sunset data from local cache
 - **useAdaptiveTextSize**: Dynamic font sizing based on container width
 - **useBreakpoint**: Responsive design breakpoint detection
-
-### Services
-- **localTimeApi**: Local data service that reads from `.docs/timezone.json`, caches in-memory, and persists preferences to `localStorage`.
 
 ## 🌐 Environment Variables
 

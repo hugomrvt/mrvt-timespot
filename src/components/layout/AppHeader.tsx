@@ -1,5 +1,5 @@
 import { Search } from 'lucide-react';
-import { TimeSpotIcon } from './TimeSpotIcon';
+import { TimeSpotIcon } from '../common/TimeSpotIcon';
 
 interface AppHeaderProps {
   onSearchClick: () => void;

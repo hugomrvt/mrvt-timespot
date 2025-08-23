@@ -1,5 +1,5 @@
-import { useBreakpoint } from '../hooks/useBreakpoint';
-import { useTouchDevice } from '../hooks/useTouchDevice';
+import { useBreakpoint } from '../../hooks/useBreakpoint';
+import { useTouchDevice } from '../../hooks/useTouchDevice';
 
 interface TimeFormatToggleProps {
   value: '12h' | '24h';

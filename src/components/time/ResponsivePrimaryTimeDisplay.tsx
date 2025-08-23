@@ -1,11 +1,11 @@
-import { TimeZoneData, FormattedTime } from '../services/localTimeApi';
+import { TimeZoneData, FormattedTime } from '../../lib/api/localTimeApi';
 import { TimeFormatToggle } from './TimeFormatToggle';
-import { formatDate } from '../utils/timezoneUtils';
-import { LocalTimeApiService } from '../services/localTimeApi';
-import { useBreakpoint } from '../hooks/useBreakpoint';
-import { useAdaptiveTextSize } from '../hooks/useAdaptiveTextSize';
-import { useSunData } from '../hooks/useSunData';
-import { logger } from '../services/secureLogger';
+import { formatDate } from '../../lib/utils/timezoneUtils';
+import { LocalTimeApiService } from '../../lib/api/localTimeApi';
+import { useBreakpoint } from '../../hooks/useBreakpoint';
+import { useAdaptiveTextSize } from '../../hooks/useAdaptiveTextSize';
+import { useSunData } from '../../hooks/useSunData';
+import { logger } from '../../lib/utils/secureLogger';
 
 interface ResponsivePrimaryTimeDisplayProps {
   primaryTimeData: TimeZoneData | undefined;

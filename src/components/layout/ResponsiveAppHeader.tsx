@@ -1,7 +1,7 @@
 import { Search } from 'lucide-react';
-import { TimeSpotIcon } from './TimeSpotIcon';
+import { TimeSpotIcon } from '../common/TimeSpotIcon';
 import { MobileNavigation } from './MobileNavigation';
-import { useBreakpoint } from '../hooks/useBreakpoint';
+import { useBreakpoint } from '../../hooks/useBreakpoint';
 
 interface ResponsiveAppHeaderProps {
   onSearchClick: () => void;

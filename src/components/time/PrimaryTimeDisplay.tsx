@@ -1,7 +1,7 @@
-import { TimeZoneData, FormattedTime } from '../services/localTimeApi';
+import { TimeZoneData, FormattedTime } from '../../lib/api/localTimeApi';
 import { TimeFormatToggle } from './TimeFormatToggle';
-import { formatDate } from '../utils/timezoneUtils';
-import { LocalTimeApiService } from '../services/localTimeApi';
+import { formatDate } from '../../lib/utils/timezoneUtils';
+import { LocalTimeApiService } from '../../lib/api/localTimeApi';
 
 interface PrimaryTimeDisplayProps {
   primaryTimeData: TimeZoneData | undefined;

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { logger } from '../services/secureLogger';
+import { logger } from '../lib/utils/secureLogger';
 
 export function useRealTimeUpdates(
   updateCallback: (currentTime: Date) => void,

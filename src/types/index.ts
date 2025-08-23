@@ -1,4 +1,4 @@
-import { TimeZoneData } from '../services/localTimeApi';
+import { TimeZoneData } from '../lib/api/localTimeApi';
 
 export interface ExtendedTimeZone {
   city: string;

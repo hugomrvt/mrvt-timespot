@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { LocalTimeApiService, SunData } from '../services/localTimeApi';
-import { logger } from '../services/secureLogger';
+import { LocalTimeApiService, SunData } from '../lib/api/localTimeApi';
+import { logger } from '../lib/utils/secureLogger';
 
 interface UseSunDataReturn {
   sunData: SunData | null;

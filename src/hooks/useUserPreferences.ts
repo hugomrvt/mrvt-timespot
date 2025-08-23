@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import { LocalTimeApiService, UserPreferences } from '../services/localTimeApi';
-import { logger } from '../services/secureLogger';
+import { LocalTimeApiService, UserPreferences } from '../lib/api/localTimeApi';
+import { logger } from '../lib/utils/secureLogger';
 
 export function useUserPreferences(userId: string, serverConnected: boolean) {
   const [preferences, setPreferences] = useState<UserPreferences | null>(null);

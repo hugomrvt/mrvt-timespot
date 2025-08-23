@@ -1,7 +1,7 @@
 import { Search, X, MapPin, Clock } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
-import { LocalTimeApiService, CitySearchResult } from '../services/localTimeApi';
-import { logger } from '../services/secureLogger';
+import { LocalTimeApiService, CitySearchResult } from '../../lib/api/localTimeApi';
+import { logger } from '../../lib/utils/secureLogger';
 
 interface HeaderProps {
   onCitySelect?: (city: CitySearchResult) => void;

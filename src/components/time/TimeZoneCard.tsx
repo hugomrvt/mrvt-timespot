@@ -1,6 +1,6 @@
-import { ExtendedTimeZone } from '../types';
-import { LocalTimeApiService, FormattedTime } from '../services/localTimeApi';
-import { getTimezoneOffset } from '../utils/timezoneUtils';
+import { ExtendedTimeZone } from '../../types';
+import { LocalTimeApiService, FormattedTime } from '../../lib/api/localTimeApi';
+import { getTimezoneOffset } from '../../lib/utils/timezoneUtils';
 
 interface TimeZoneCardProps {
   timezone: ExtendedTimeZone;

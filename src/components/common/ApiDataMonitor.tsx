@@ -1,5 +1,5 @@
-import { ExtendedTimeZone } from '../types';
-import { useBreakpoint } from '../hooks/useBreakpoint';
+import { ExtendedTimeZone } from '../../types';
+import { useBreakpoint } from '../../hooks/useBreakpoint';
 
 interface ApiDataMonitorProps {
   timeZones: ExtendedTimeZone[];

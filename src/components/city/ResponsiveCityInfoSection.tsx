@@ -1,6 +1,6 @@
 import { Plus } from 'lucide-react';
-import { ExtendedTimeZone } from '../types';
-import { useBreakpoint } from '../hooks/useBreakpoint';
+import { ExtendedTimeZone } from '../../types';
+import { useBreakpoint } from '../../hooks/useBreakpoint';
 
 interface ResponsiveCityInfoSectionProps {
   selectedTimezone: ExtendedTimeZone | undefined;

@@ -1,4 +1,4 @@
-import { useBreakpoint } from "../hooks/useBreakpoint";
+import { useBreakpoint } from "../../hooks/useBreakpoint";
 
 export function Credits() {
   const { isMobile, isVerySmall } = useBreakpoint();

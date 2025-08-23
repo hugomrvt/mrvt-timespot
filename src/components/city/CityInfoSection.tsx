@@ -1,5 +1,5 @@
 import { Plus } from 'lucide-react';
-import { ExtendedTimeZone } from '../types';
+import { ExtendedTimeZone } from '../../types';
 
 interface CityInfoSectionProps {
   selectedTimezone: ExtendedTimeZone | undefined;

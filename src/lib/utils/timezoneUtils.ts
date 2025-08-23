@@ -1,11 +1,11 @@
-import { TimeZoneData } from '../services/localTimeApi';
+import { TimeZoneData } from '../api/localTimeApi';
 import { 
   TIMEZONE_TO_COUNTRY_MAP, 
   TIMEZONE_FIX_MAP, 
   FALLBACK_OFFSETS, 
   FALLBACK_TIMEZONE_OFFSETS 
-} from '../constants/timezones';
-import { logger } from '../services/secureLogger';
+} from '../../constants/timezones';
+import { logger } from './secureLogger';
 
 export function getRealTimeForTimezone(timezone: string, preserveCountry?: string): TimeZoneData | undefined {
   try {

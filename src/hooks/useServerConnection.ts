@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { LocalTimeApiService } from '../services/localTimeApi';
+import { LocalTimeApiService } from '../lib/api/localTimeApi';
 import { ServerConnectionState } from '../types';
-import { logger } from '../services/secureLogger';
+import { logger } from '../lib/utils/secureLogger';
 
 export function useServerConnection() {
   const [state, setState] = useState<ServerConnectionState>({

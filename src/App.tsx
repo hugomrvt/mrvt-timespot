@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-import { CitySearchResult } from './services/localTimeApi';
-import { LocalTimeApiService } from './services/localTimeApi';
+import { CitySearchResult } from './lib/api/localTimeApi';
+import { LocalTimeApiService } from './lib/api/localTimeApi';
 
 // Hooks
 import { useServerConnection } from './hooks/useServerConnection';
@@ -10,14 +10,14 @@ import { useRealTimeUpdates } from './hooks/useRealTimeUpdates';
 import { useBreakpoint } from './hooks/useBreakpoint';
 
 // Components
-import { Header } from './components/Header';
-import { ResponsiveAppHeader } from './components/ResponsiveAppHeader';
-import { StatusNotification } from './components/StatusNotification';
-import { ResponsivePrimaryTimeDisplay } from './components/ResponsivePrimaryTimeDisplay';
-import { ResponsiveCityInfoSection } from './components/ResponsiveCityInfoSection';
-import { ResponsiveTimeZoneGrid } from './components/ResponsiveTimeZoneGrid';
-import { Credits } from './components/Credits';
-import { logger } from './services/secureLogger';
+import { Header } from './components/layout/Header';
+import { ResponsiveAppHeader } from './components/layout/ResponsiveAppHeader';
+import { StatusNotification } from './components/common/StatusNotification';
+import { ResponsivePrimaryTimeDisplay } from './components/time/ResponsivePrimaryTimeDisplay';
+import { ResponsiveCityInfoSection } from './components/city/ResponsiveCityInfoSection';
+import { ResponsiveTimeZoneGrid } from './components/time/ResponsiveTimeZoneGrid';
+import { Credits } from './components/common/Credits';
+import { logger } from './lib/utils/secureLogger';
 
 
 export default function App() {

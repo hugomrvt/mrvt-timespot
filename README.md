@@ -12,8 +12,6 @@
 
 ![TimeSpot App Screenshot](https://i.imgur.com/itiXSyh.png)
 
-*Beautiful, responsive design that adapts to any screen size*
-
 ## ✨ Features
 
 - 🕐 **Real-time Clock Display** - Live updates for multiple time zones

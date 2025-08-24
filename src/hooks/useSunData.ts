@@ -40,8 +40,9 @@ export function useSunData(
         setSunData(null);
       }
     } catch (error) {
-      logger.error('Error fetching sun data:', error, 'useSunData');
-      setError(error instanceof Error ? error.message : 'Unknown error');
+      // Log as debug instead of error to avoid console noise when server is offline
+      logger.debug('Sun data unavailable (server offline):', error, 'useSunData');
+      setError(error instanceof Error ? error.message : 'Server offline');
       setSunData(null);
     } finally {
       setLoading(false);

@@ -1,5 +1,5 @@
 import { TIMEZONE_TO_COUNTRY_MAP } from '../../constants/timezones';
-import timezoneDump from '../../../.docs/timezone.json';
+import timezoneDumpRaw from '../../../.docs/timezone.json';
 import { logger } from '../utils/secureLogger';
 import { 
   validateData, 
@@ -12,7 +12,28 @@ import {
 // Local data caches built from .docs/timezone.json
 // The dump is an array of { key, value } entries like: time_cache_<TZ>, sun_cache_<TZ>, user_preferences_<USERID>
 type DumpEntry = { key: string; value: any };
-const DUMP: DumpEntry[] = Array.isArray(timezoneDump) ? (timezoneDump as DumpEntry[]) : [];
+
+// Safely parse the imported JSON data
+const timezoneDump = (() => {
+  try {
+    // Handle both direct array and default export scenarios
+    const data = timezoneDumpRaw && typeof timezoneDumpRaw === 'object' 
+      ? (timezoneDumpRaw as any).default || timezoneDumpRaw 
+      : timezoneDumpRaw;
+    
+    if (Array.isArray(data)) {
+      return data as DumpEntry[];
+    }
+    
+    logger.warn('Timezone dump is not an array, using empty array as fallback');
+    return [];
+  } catch (error) {
+    logger.error('Failed to parse timezone dump:', error);
+    return [];
+  }
+})();
+
+const DUMP: DumpEntry[] = timezoneDump;
 const TIME_CACHE = new Map<string, any>();
 const SUN_CACHE = new Map<string, any>();
 const PREF_CACHE = new Map<string, any>();

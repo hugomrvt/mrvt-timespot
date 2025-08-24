@@ -35,6 +35,8 @@ export default function App() {
     timeZones,
     primaryTimeData,
     primaryLoading,
+    setPrimaryTimeData,
+    setPrimaryLoading,
     loadTimeZoneDataFromServer,
     loadPrimaryTimeDataFromServer,
     updateRealTimeData,
@@ -114,6 +116,16 @@ export default function App() {
     logger.info(`Selecting timezone: ${city}`, { city }, 'App');
     setSelectedTimezone(city);
     savePreferences({ selectedCity: city });
+    
+    // Synchronize primaryTimeData with the selected timezone
+    const selectedTz = timeZones.find(tz => tz.city === city);
+    if (selectedTz && selectedTz.data) {
+      setPrimaryTimeData(selectedTz.data);
+      setPrimaryLoading(false);
+    } else {
+      // If no data available, set loading state
+      setPrimaryLoading(true);
+    }
   };
 
   const handleCitySearch = async (city: CitySearchResult) => {

@@ -40,8 +40,12 @@ export function useTimeZoneData(
           loading: serverConnected,
           data: realTimeData // Toujours avoir des données temps réel comme fallback
         };
-      });
-      setTimeZones(initialTimeZones);
+      });      setTimeZones(initialTimeZones);      
+      // Initialize primaryTimeData with the first favorite timezone
+      if (initialTimeZones.length > 0 && initialTimeZones[0].data) {
+        setPrimaryTimeData(initialTimeZones[0].data);
+        setPrimaryLoading(false);
+      }
     } else {
       // Utiliser les données par défaut avec temps réel
       const timezonesWithData = DEFAULT_TIMEZONES.map(tz => {
@@ -51,8 +55,11 @@ export function useTimeZoneData(
           data: realTimeData,
           loading: false
         };
-      });
-      setTimeZones(timezonesWithData);
+      });      setTimeZones(timezonesWithData);      
+      // Initialize primaryTimeData with the first default timezone (London)
+      if (timezonesWithData.length > 0 && timezonesWithData[0].data) {
+        setPrimaryTimeData(timezonesWithData[0].data);
+      }
       setPrimaryLoading(false);
     }
     
